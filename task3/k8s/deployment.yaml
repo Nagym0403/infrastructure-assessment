@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-hello
+  labels:
+    app: rest-hello
+spec:
+  selector:
+    matchLabels:
+      app: rest-hello
+  template:
+    metadata:
+      labels:
+        app: rest-hello
+    spec:
+      containers:
+        - name: rest-hello
+          image: rest-hello:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
